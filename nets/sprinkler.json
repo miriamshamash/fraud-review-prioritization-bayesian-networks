@@ -1,0 +1,36 @@
+{
+    "nodes": {
+        "Cloudy": ["T", "F"],
+        "Sprinkler": ["T", "F"],
+        "Rain": ["T", "F"],
+        "WetGrass": ["T", "F"]
+    },
+    "parents": {
+        "Sprinkler": ["Cloudy"],
+        "Rain": ["Cloudy"],
+        "WetGrass": ["Sprinkler", "Rain"],
+        "Cloudy": []
+    },
+    "tables": {
+        "Cloudy": [
+            [[], [0.5, 0.5]]
+        ],
+
+        "Sprinkler":[
+            [["T"], [0.5, 0.5]],
+            [["F"], [0.9, 0.1]]
+        ],
+
+        "Rain":[
+            [["T"], [0.8, 0.2]],
+            [["F"], [0.2, 0.8]]
+        ],
+
+        "WetGrass":[
+            [["T", "T"], [1, 0] ],
+            [["T", "F"], [0.1, 0.9] ],
+            [["F", "T"], [0.1, 0.9] ],
+            [["F", "F"], [0.01, 0.99] ]
+        ]
+    }
+}
